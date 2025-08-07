@@ -1,25 +1,9 @@
-function solveSudoku(board) {
-	const emptySpot = findEmptySpot(board);
-
-	if (!emptySpot) {
-		return true;
+function createEmptyBoard() {
+	const board = [];
+	for (let i = 0; i < 9; i++) {
+		board.push(new Array(9).fill(0));
 	}
-
-	const [row, col] = emptySpot;
-
-	for (let num = 1; num <= 9; num++) {
-		if (isValid(board, row, col, num)) {
-			board[row][col] = num;
-
-			if (solveSudoku(board)) {
-				return true;
-			}
-
-			board[row][col] = 0;
-		}
-	}
-
-	return false;
+	return board;
 }
 
 function findEmptySpot(board) {
@@ -60,18 +44,67 @@ function isValid(board, row, col, num) {
 	return true;
 }
 
+function solveSudoku(board) {
+	const emptySpot = findEmptySpot(board);
+
+	if (!emptySpot) {
+		return true;
+	}
+
+	const [row, col] = emptySpot;
+
+	const numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9].sort(() => Math.random() - 0.5);
+
+	for (const num of numbers) {
+		if (isValid(board, row, col, num)) {
+			board[row][col] = num;
+
+			if (solveSudoku(board)) {
+				return true;
+			}
+
+			board[row][col] = 0;
+		}
+	}
+
+	return false;
+}
+
 const difficulty = {
-  easy: 54,
-  medium: 36,
-  hard: 27,
-  extreme: 18,
+	easy: 54,
+	medium: 36,
+	hard: 27,
+	extreme: 18,
+};
+
+function removeNumbers(board, difficulty) {
+	let attempts = 81 - difficulty;
+
+	while (attempts > 0) {
+		let row = Math.floor(Math.random() * 9);
+		let col = Math.floor(Math.random() * 9);
+
+		if (board[row][col] !== 0) {
+			board[row][col] = 0;
+			attempts--;
+		}
+	}
 }
 
-function generateSudokuGame() {
-	let board = generateSudokuBoard();
-	let soliton = solveSudoku(board);
+function generateSudokuGame(difficulty) {
+	let board = createEmptyBoard();
 
-	console.log(board);
+	let solvedBoard = board;
+	solveSudoku(solvedBoard);
 
-	return board;
+	let gameBoard = solvedBoard.map((row) => [...row]);
+
+	removeNumbers(gameBoard, difficulty);
+
+	console.log("Solução:", solvedBoard);
+	console.log("Jogo:", gameBoard);
+
+	return { game: gameBoard, solution: solvedBoard };
 }
+
+generateSudokuGame(difficulty.medium);
