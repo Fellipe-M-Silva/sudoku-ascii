@@ -1,0 +1,9 @@
+* {
+	font-family: "Roboto Mono", "Courier New", Courier, monospace;
+	box-sizing: border-box;
+	margin: 0;
+}
+
+#board p {
+	line-height: 1;
+}

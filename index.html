@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+			rel="stylesheet"
+		/>
+		<link
+			href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap"
+			rel="stylesheet"
+		/>
+		<link rel="stylesheet" href="style.css" />
+		<title>## Sudoku ##</title>
+	</head>
+	<body>
+		<h1>Sudoku</h1>
+		<div id="board">
+			<p>╔═══╤═══╤═══╦═══╤═══╤═══╦═══╤═══╤═══╗</p>
+			<p>
+				║ <span>X</span> │ <span>X</span> │ <span>X</span> ║
+				<span>X</span> │ <span>X</span> │ <span>X</span> ║
+				<span>X</span> │ <span>X</span> │ <span>X</span> ║
+			</p>
+			<p>╟───┼───┼───╫───┼───┼───╫───┼───┼───╢</p>
+			<p>
+				║ <span>X</span> │ <span>X</span> │ <span>X</span> ║
+				<span>X</span> │ <span>X</span> │ <span>X</span> ║
+				<span>X</span> │ <span>X</span> │ <span>X</span> ║
+			</p>
+			<p>╟───┼───┼───╫───┼───┼───╫───┼───┼───╢</p>
+			<p>
+				║ <span>X</span> │ <span>X</span> │ <span>X</span> ║
+				<span>X</span> │ <span>X</span> │ <span>X</span> ║
+				<span>X</span> │ <span>X</span> │ <span>X</span> ║
+			</p>
+			<p>╠═══╪═══╪═══╬═══╪═══╪═══╬═══╪═══╪═══╣</p>
+			<p>
+				║ <span>X</span> │ <span>X</span> │ <span>X</span> ║
+				<span>X</span> │ <span>X</span> │ <span>X</span> ║
+				<span>X</span> │ <span>X</span> │ <span>X</span> ║
+			</p>
+			<p>╟───┼───┼───╫───┼───┼───╫───┼───┼───╢</p>
+			<p>
+				║ <span>X</span> │ <span>X</span> │ <span>X</span> ║
+				<span>X</span> │ <span>X</span> │ <span>X</span> ║
+				<span>X</span> │ <span>X</span> │ <span>X</span> ║
+			</p>
+			<p>╟───┼───┼───╫───┼───┼───╫───┼───┼───╢</p>
+			<p>
+				║ <span>X</span> │ <span>X</span> │ <span>X</span> ║
+				<span>X</span> │ <span>X</span> │ <span>X</span> ║
+				<span>X</span> │ <span>X</span> │ <span>X</span> ║
+			</p>
+			<p>╠═══╪═══╪═══╬═══╪═══╪═══╬═══╪═══╪═══╣</p>
+			<p>
+				║ <span>X</span> │ <span>X</span> │ <span>X</span> ║
+				<span>X</span> │ <span>X</span> │ <span>X</span> ║
+				<span>X</span> │ <span>X</span> │ <span>X</span> ║
+			</p>
+			<p>╟───┼───┼───╫───┼───┼───╫───┼───┼───╢</p>
+			<p>
+				║ <span>X</span> │ <span>X</span> │ <span>X</span> ║
+				<span>X</span> │ <span>X</span> │ <span>X</span> ║
+				  <span>X</span> │ <span>X</span> │ <span>X</span> ║
+			</p>
+			<p>╟───┼───┼───╫───┼───┼───╫───┼───┼───╢</p>
+			<p>
+				║ <span>X</span> │ <span>X</span> │ <span>X</span> ║
+				<span>X</span> │ <span>X</span> │ <span>X</span> ║
+				<span>X</span> │ <span>X</span> │ <span>X</span> ║
+			</p>
+			<p>╚═══╧═══╧═══╩═══╧═══╧═══╩═══╧═══╧═══╝</p>
+		</div>
+
+		<div id="controls">
+			<button id="new-game">Novo Jogo</button>
+			<button id="check">Checar Respostas</button>
+		</div>
+
+		<script src="script.js"></script>
+	</body>
+</html>
